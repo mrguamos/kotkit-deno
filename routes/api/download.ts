@@ -19,7 +19,6 @@ export const handler: Handlers = {
             "Connection": "keep-alive",
           },
         });
-        console.log(resp)
         path = resp.url.split(/[?#]/)[0];
       }
       const videoId = path.substring(path.lastIndexOf("/") + 1, path.length);
