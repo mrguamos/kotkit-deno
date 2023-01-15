@@ -3,8 +3,8 @@ import { Handlers } from "$fresh/server.ts";
 // import { Buffer } from "https://deno.land/std@0.172.0/io/buffer.ts";
 export const handler: Handlers = {
   async GET(req: Request) {
-    const url = new URL(req.url);
-    const query = url.searchParams.get("url") || "";
+    const reqURL = new URL(req.url);
+    const query = reqURL.searchParams.get("url") || "";
     let path = query.split(/[?#]/)[0];
     if (path.includes("tiktok")) {
       if (!path.includes("video")) {
