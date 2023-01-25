@@ -23,6 +23,9 @@ const DownloadForm = () => {
           placeholder="Paste URL here"
           class="w-full max-w-sm rounded-md p-2 text-center text-black"
         />
+        <span class="px-2 text-center text-gray-300 text-opacity-90 font-thin">
+          ( Short URL does not work on regions near HongKong )
+        </span>
         <a
           onClick={showAds}
           href={`${path}?url=${url}`}
