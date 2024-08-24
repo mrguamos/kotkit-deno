@@ -23,10 +23,12 @@ export const handler: Handlers = {
       }
       const videoId = path.substring(path.lastIndexOf("/") + 1, path.length);
       if (videoId) {
-        const url = "https://api.tiktokv.com/aweme/v1/feed/";
+        const url = "https://api22-normal-c-alisg.tiktokv.com/aweme/v1/feed/";
         const data: RootObject = await fetch(`${url}?${new URLSearchParams({
           "aweme_id": videoId,
-        })}`).then((_data) => _data.json());
+        })}`, {
+          method: "OPTIONS",
+        }).then((_data) => _data.json());
         const video = await fetch(
           data?.aweme_list[0].video.play_addr.url_list[0] ?? "",
         ).then((_data) => _data.blob());
